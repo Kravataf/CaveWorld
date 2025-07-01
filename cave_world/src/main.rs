@@ -14,7 +14,7 @@ fn main() {
         .insert_resource(ClearColor(CLEAR_COLOR))
         .add_plugins(DefaultPlugins.set(WindowPlugin {
             primary_window: Some(Window {
-                title: "Cave World".to_string(),
+                title: "minecraft-clone".to_string(),
                 resizable: true,
                 present_mode: PresentMode::Fifo, // toto je vsync vraj
                 ..Default::default()
