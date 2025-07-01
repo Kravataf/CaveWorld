@@ -7,7 +7,7 @@ use bevy::{
     window::PresentMode,
 };
 
-pub const CLEAR_COLOR: Color = Color::srgb(0., 0., 0.);
+pub const CLEAR_COLOR: Color = Color::srgb(1., 1., 1.);
 
 fn main() {
     App::new()
@@ -39,23 +39,25 @@ fn setup(
     });
 
     for i in 0..10 {
-        for j in 0..10 {
-            commands.spawn((
+        for j in 0..3 {
+            for k in 0..10 {
+                commands.spawn((
                 Mesh3d(meshes.add(Cuboid::new(1.0, 1.0, 1.0))),
                 MeshMaterial3d(material_handle.clone()),
-                Transform::from_xyz(i as f32, 0.0, j as f32),
-            ));
+                Transform::from_xyz(i as f32, j as f32, k as f32),
+                ));
+            }
         }
     }
 
     commands.spawn((
         Camera3d::default(),
-        Transform::from_xyz(-5., 5., 5.).looking_at(Vec3::ZERO, Vec3::Y),
+        Transform::from_xyz(20., 20., 20.).looking_at(Vec3::new(5., 1.5, 5.), Vec3::Y),
     ));
 
     commands.insert_resource(AmbientLight {
-        color: WHITE.into(),
-        brightness: 1.0,
+        color: Color::srgb(0.8, 0.8, 0.8),
+        brightness: 20.0,
         ..default()
     });
 
