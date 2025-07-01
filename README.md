@@ -1,5 +1,5 @@
 # minecraft-clone
 
-:p
+Written in Bevy using Rust.. Not sure what else I should add here
 
-![image](https://github.com/user-attachments/assets/889853ea-fa19-43ae-b30f-af7b77f2f8c7)
+![image](https://github.com/user-attachments/assets/ebc37da9-f153-4b26-a312-71e76919e737)
